@@ -1,25 +1,25 @@
---1. Write a query to drop a database named `todo_app` if it exists
+-- Write a query to drop a database named `todo_app` if it exists
 
 DROP DATABASE IF EXISTS todo_app;
 
---1. Write a query to delete a user named `michael` if it exists
+-- Write a query to delete a user named `michael` if it exists
 
 DROP USER IF EXISTS michael;
 
---1. Write a query to create a user named `michael` with an encrypted password `stonebreaker`
+-- Write a query to create a user named `michael` with an encrypted password `stonebreaker`
 
 CREATE USER michael
 WITH ENCRYPTED PASSWORD 'sqlsucks';
 
---1. Write a query to create a database named `todo_app`
+-- Write a query to create a database named `todo_app`
 
 CREATE DATABASE todo_app;
 
--- 1. Connect to the newly created database
+-- Connect to the newly created database
 
 \c todo_app;
 
--- 1. Write a query to create a table named `tasks` using the
+-- Write a query to create a table named `tasks` using the
 -- **Initial columns** detailed below
 
 CREATE TABLE tasks(
@@ -126,4 +126,13 @@ WHERE title LIKE '%mistake%';
 
 -- delete all tasks that includes the word 'mistake' in the title
 
+DELETE
+FROM tasks
+WHERE title LIKE '%mistake%';
+
 -- select all fields of all tasks sorted by title in ascending order
+
+SELECT *
+FROM tasks
+ORDER BY title ASC;
+
